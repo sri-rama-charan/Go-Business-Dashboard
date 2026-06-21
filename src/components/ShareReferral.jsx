@@ -10,7 +10,6 @@ const ShareReferral = ({ referral }) => {
   if (!link && !code) {
     return (
       <section
-        role="region"
         aria-label="Share referral"
         className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm"
       >
@@ -42,7 +41,6 @@ const ShareReferral = ({ referral }) => {
 
   return (
     <section
-      role="region"
       aria-label="Share referral"
       className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm"
     >

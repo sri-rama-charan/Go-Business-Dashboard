@@ -24,7 +24,7 @@ const metricIcons = {
 const Overview = ({ metrics }) => {
     if (metrics.length === 0) {
         return (
-            <section role="region" aria-label="Overview metrics" className="mt-10 bg-white p-6 rounded-lg shadow-sm">
+            <section aria-label="Overview metrics" className="mt-10 bg-white p-6 rounded-lg shadow-sm">
                 <h2 className="text-xl font-bold text-gray-900 mb-6 text-left">Overview</h2>
                 <div className="text-black-500 text-sm">Loading metrics...</div>
             </section>
@@ -32,7 +32,7 @@ const Overview = ({ metrics }) => {
     }
 
     return (
-        <section role="region" aria-label="Overview metrics" className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+        <section aria-label="Overview metrics" className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
             <h2 className="text-xl font-bold text-gray-900 mb-6 text-left">Overview</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {metrics.map((metric, index) => {
