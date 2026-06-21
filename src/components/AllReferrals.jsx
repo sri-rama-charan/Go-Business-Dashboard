@@ -33,6 +33,7 @@ const AllReferrals = ({ referralsList }) => {
   if (referrals === undefined) {
     return (
       <section
+        role="region"
         aria-label="All referrals list"
         className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm"
       >
@@ -54,6 +55,7 @@ const AllReferrals = ({ referralsList }) => {
 
   return (
     <section
+      role="region"
       aria-label="All referrals list"
       className="mt-10 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm"
     >

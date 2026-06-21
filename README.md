@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Go Business - Referral Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean React dashboard to track referrals, earnings, and partner details.
 
-## Available Scripts
+## Quick Start
 
-In the project directory, you can run:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm start`
+2. Start the development server:
+   ```bash
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Authentication**: Simple login screen with cookies-based sessions.
+- **Metrics Overview**: Key performance indicators with clean icons.
+- **Service Summary**: Visual cards for active referrals and total earnings.
+- **One-click Copy**: Easily share referral links and codes.
+- **Interactive Referrals Table**: Filter by search query, sort by date, and click rows to open detailed pages.
+- **Detail View**: Full information about individual referral partners at `/referral/:id`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Test Credentials
 
-### `npm run build`
+- **Email**: `admin@example.com`
+- **Password**: `admin123`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```text
+src/
+├── components/
+│   ├── AllReferrals.jsx      # Referral section layout
+│   ├── Footer.jsx            # Branding and footer navigation
+│   ├── Navbar.jsx            # Home links and logout controls
+│   ├── Overview.jsx          # Metric cards overview
+│   ├── Pagination.jsx        # Client-side table paging
+│   ├── ProtectedRoute.jsx    # Private route guard
+│   ├── PublicRoute.jsx       # Public route block
+│   ├── ReferralsTable.jsx    # Table displaying row entries
+│   ├── ShareReferral.jsx     # Read-only referral link inputs
+│   └── Summary.jsx           # Service breakdown summary
+├── pages/
+│   ├── Dashboard/            # Main metrics and summary portal
+│   ├── Login/                # User login screen
+│   ├── NotFound/             # 404 page
+│   └── ReferralDetails/      # Detail list of individual referrals
+├── services/
+│   ├── authApi.js            # Post call to login endpoint
+│   ├── referralsApi.js       # Get call for main listings & details
+│   └── searchFilterApi.js    # Get call for search & sort
+└── utils/
+    ├── formatCurrency.js     # Profit value en-US USD format
+    └── formatDate.js         # YYYY/MM/DD slash date format
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
