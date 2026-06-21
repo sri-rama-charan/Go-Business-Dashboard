@@ -23,7 +23,6 @@ const Login = () => {
     console.log("Form submitted");
     const res = await loginUser(email, password);
     const data = await res.json();
-    console.log(data);
     if(data.success)
     {
       Cookies.set("jwt_token", data.data.token);
