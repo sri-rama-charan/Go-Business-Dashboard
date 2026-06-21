@@ -46,7 +46,6 @@ const AllReferrals = ({ referralsList }) => {
     );
   }
 
-  // Paginate referrals
   const totalEntries = referrals.length;
   const totalPages = Math.ceil(totalEntries / pageSize) || 1;
   const startIndex = (currentPage - 1) * pageSize;
@@ -63,7 +62,6 @@ const AllReferrals = ({ referralsList }) => {
       </h2>
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-8">
-        {/* Search */}
         <div className="flex items-center gap-2">
           <label
             htmlFor="search"
@@ -82,7 +80,6 @@ const AllReferrals = ({ referralsList }) => {
           />
         </div>
 
-        {/* Sort */}
         <div className="flex items-center gap-2">
           <label className="text-sm font-semibold text-slate-400 flex items-center gap-2 cursor-pointer">
             Sort by date
@@ -98,10 +95,8 @@ const AllReferrals = ({ referralsList }) => {
         </div>
       </div>
 
-      {/* Referrals Table */}
       <ReferralsTable referrals={paginatedReferrals} />
 
-      {/* Pagination Controls */}
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}

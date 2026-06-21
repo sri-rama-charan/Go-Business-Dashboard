@@ -19,13 +19,13 @@ const ReferralDetails = () => {
         if (body && body.success && body.data) {
           const data = body.data;
           if (data && typeof data === "object" && !Array.isArray(data)) {
-            if (data.id == id) {
+            if (String(data.id) === String(id)) {
               matched = data;
             } else if (data.referrals && Array.isArray(data.referrals)) {
-              matched = data.referrals.find((item) => item.id == id);
+              matched = data.referrals.find((item) => String(item.id) === String(id));
             }
           } else if (Array.isArray(data)) {
-            matched = data.find((item) => item.id == id);
+            matched = data.find((item) => String(item.id) === String(id));
           }
         }
         setReferral(matched);
@@ -77,7 +77,6 @@ const ReferralDetails = () => {
     <div className="min-h-screen bg-[#f8fafc] pr-24 pl-24 pb-16">
       <Navbar />
       <div className="max-w-5xl mx-auto py-12">
-        {/* Back Link */}
         <Link
           to="/"
           aria-label="Back to dashboard"
@@ -86,7 +85,6 @@ const ReferralDetails = () => {
           &larr; Back to dashboard
         </Link>
 
-        {/* Headings */}
         <h1 className="text-3xl font-extrabold text-[#0f172a] tracking-tight mb-1">
           Referral Details
         </h1>
@@ -94,9 +92,7 @@ const ReferralDetails = () => {
           Full information for this referral partner.
         </p>
 
-        {/* Details Card */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-[0_1px_3px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.06)] p-8 max-w-lg">
-          {/* Header */}
           <div className="flex items-center justify-between pb-6 border-b border-slate-100 mb-2">
             <h2 className="text-2xl font-bold text-[#0f172a]">
               {referral.name}
@@ -106,7 +102,6 @@ const ReferralDetails = () => {
             </span>
           </div>
 
-          {/* Definition List */}
           <dl className="divide-y divide-slate-100">
             <div className="flex items-center py-5">
               <dt className="w-48 text-[#94a3b8] font-bold text-xs tracking-wider uppercase">
